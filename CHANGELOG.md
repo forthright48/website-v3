@@ -5,3 +5,7 @@ All notable changes to this project will be documented in this file. This projec
 ### Added
 - .gitignore file to ignore modules and secret.js
 - README.md, LICENSE.md and CHANGELOG.md
+- package.json
+- Common modules
+- Module to store global variables and functions: forthright48/world
+- Basic server with tests
