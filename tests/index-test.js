@@ -32,7 +32,7 @@ describe('index.js', function() {
   });
 
   it('should be using /views as render folder', function() {
-    assert.equal(app.get('views'), `${rootPath}/views`, 'views should be in root/views folder');
+    assert.equal(app.get('views'), path.join(rootPath, './views'), 'views should be in root/views folder');
   });
 
   it('should have /public as public directory', function(done) {
@@ -40,7 +40,7 @@ describe('index.js', function() {
       .get(`${baseurl}/public/test.txt`)
       .end(function(err, res) {
         if (err) done(err);
-        res.text.should.equal('working\n');
+        assert.equal(res.text, 'working\n', 'There should be a test.txt file in root/public folder and it should be public');
         done();
       });
   });
