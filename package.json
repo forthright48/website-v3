@@ -1,0 +1,28 @@
+{
+  "name": "@forthright48/website-v3",
+  "version": "0.0.0",
+  "description": "My personal website",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "./node_modules/mocha/bin/mocha --recursive --reporter spec ./tests"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/forthright48/website-v3.git"
+  },
+  "author": {
+    "name": "Mohammad Samiul Islam (forthright48)",
+    "email": "forthright48@gmail.com",
+    "url": "http://www.forthright48.com"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/forthright48/website-v3/issues"
+  },
+  "homepage": "https://github.com/forthright48/website-v3#readme",
+  "engines": {
+    "node": "6.2.1"
+  },
+  "private": true
+}
