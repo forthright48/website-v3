@@ -4,6 +4,7 @@ All notable changes to this project will be documented in this file. This projec
 ## [0.1.0] - 2016-07-15
 ## Added
 - Views: layout, header and footer
+- Homepage
 
 ## [0.0.0] - 2016-07-13
 ### Added
