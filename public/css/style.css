@@ -1,5 +1,6 @@
 .footer {
   font-size: 1rem;
+  color: gray;
 }
 
 .footer a {
@@ -9,4 +10,10 @@
 
 a:visited, a{
   color: #0074D9;
+}
+
+
+/*SimpleCSS Extensions*/
+.u-flex-center {
+  align-items: center;
 }

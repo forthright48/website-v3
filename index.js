@@ -11,7 +11,9 @@ app.set('view engine', 'pug');
 app.set('views', path.join(rootPath, './views'));
 
 app.use('/public', express.static(path.join(rootPath, '/public')));
-app.use('/public/css', express.static(path.join(rootPath, '/node_moduels/@forthright48/simplecss/src')));
+app.use('/public/css', express.static(path.join(rootPath, '/node_modules/@forthright48/simplecss/src')));
+
+app.get('/', getHome);
 
 if (require.main === module) {
   server.listen(app.get('port'), function() {
@@ -22,4 +24,12 @@ if (require.main === module) {
     server,
     app
   };
+}
+
+/*******************************************
+Implementation
+*******************************************/
+
+function getHome(req, res) {
+  return res.render('home');
 }
