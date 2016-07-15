@@ -11,6 +11,7 @@ app.set('view engine', 'pug');
 app.set('views', path.join(rootPath, './views'));
 
 app.use('/public', express.static(path.join(rootPath, '/public')));
+app.use('/public/css', express.static(path.join(rootPath, '/node_moduels/@forthright48/simplecss/src')));
 
 if (require.main === module) {
   server.listen(app.get('port'), function() {
