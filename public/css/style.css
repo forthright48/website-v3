@@ -1,0 +1,12 @@
+.footer {
+  font-size: 1rem;
+}
+
+.footer a {
+  text-decoration: none;
+}
+
+
+a:visited, a{
+  color: #0074D9;
+}
