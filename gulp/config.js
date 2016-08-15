@@ -13,14 +13,7 @@ module.exports = {
     ],
     js: './src/**/*.js',
     vendor: {
-      components: {
-        all: 'src/**/vendor/**/*.*',
-        js: 'src/**/vendor/**/*.js',
-        nonJs: [
-          'app/**/vendor/**/*',
-          '!app/**/vendor/**/*.js'
-        ]
-      }
+      js: './src/js/vendors'
     },
     browsersync: ['./public/**/*.css', './public/**/*.js', 'views/**/*.pug']
   }

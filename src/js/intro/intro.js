@@ -1,0 +1,3 @@
+/**
+ * @requires ../vendors/jquery.js
+ */
