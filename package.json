@@ -29,6 +29,7 @@
     "@forthright48/simplecss": "^1.1.0",
     "express": "^4.14.0",
     "jquery": "^3.1.0",
+    "moment": "^2.14.1",
     "pug": "^2.0.0-beta3"
   },
   "devDependencies": {
