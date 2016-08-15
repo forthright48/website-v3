@@ -2,10 +2,11 @@ module.exports = {
   path: {
     dirs: {
       public: './public',
-      temp: './temp'
+      temp: './temp',
+      output: './public'
     },
     pug: './views/**/*.pug',
-    images: './src/**/*.{JPG,jpg,png,gif}',
+    image: './src/**/*.{JPG,jpg,png,gif}',
     css: [
       './src/**/*.css',
       './node_modules/@forthright48/simplecss/src/*.css'
