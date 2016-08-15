@@ -2,7 +2,13 @@
   font-size: 1rem;
   color: gray;
 }
-
 .footer a {
   text-decoration: none;
+}
+.u-margin-top {
+  margin-top: 1.5rem;
+}
+img {
+  max-width: 100%;
+  box-shadow: 8px 8px 10px #aaa;
 }
