@@ -14,6 +14,7 @@ app.use('/public', express.static(path.join(rootPath, '/public')));
 app.use('/public/css', express.static(path.join(rootPath, '/node_modules/@forthright48/simplecss/src')));
 
 app.get('/', getHome);
+app.get('/intro', getIntro);
 
 if (require.main === module) {
   server.listen(app.get('port'), function() {
@@ -32,4 +33,8 @@ Implementation
 
 function getHome(req, res) {
   return res.render('home');
+}
+
+function getIntro(req, res) {
+  return res.render('intro');
 }
