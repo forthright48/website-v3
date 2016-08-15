@@ -8,12 +8,13 @@ const babel = require('gulp-babel');
 const uglify = require('gulp-uglify');
 const del = require('del');
 const config = require('./config.js');
+const rootPath = require('forthright48/world').rootPath;
 
 module.exports = function(gulp) {
   let dependencyCounter;
 
   function solveDependency(file, len, done) {
-    const relative = path.relative(path.join(__dirname, 'src'), file);
+    const relative = path.relative(path.join(rootPath, 'src'), file);
     pump([
       gulp.src(file),
       resolveDependencies({
@@ -21,14 +22,19 @@ module.exports = function(gulp) {
         log: true
       }),
       concat(relative),
-      gulp.dest('./temp')
+      babel({
+        presets: ['es2015'],
+        plugins: ['transform-runtime']
+      }),
+      uglify(),
+      gulp.dest(config.path.dirs.public)
     ], function() {
       dependencyCounter++;
       if (dependencyCounter === len) done();
     });
   }
 
-  gulp.task('solveDependency', function(done) {
+  gulp.task('script', function(done) {
     dependencyCounter = 0;
     globToVinyl(config.path.js, function(err, files) {
       if (files.length === 0) {
@@ -39,21 +45,4 @@ module.exports = function(gulp) {
       }
     });
   });
-
-  gulp.task('script', gulp.series('solveDependency', function(done) {
-    return pump([
-      gulp.src('./temp/**/*.js'),
-      recursive({
-        extname: '.js'
-      }),
-      babel({
-        presets: ['es2015'],
-        plugins: ['transform-runtime']
-      }),
-      uglify(),
-      gulp.dest('./public')
-    ], function() {
-      del([config.path.dirs.temp], done);
-    });
-  }));
 };
