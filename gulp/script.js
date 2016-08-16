@@ -1,17 +1,17 @@
 const path = require('path');
-const concat = require('gulp-concat');
 const uglify = require('gulp-uglify');
-const config = require('./config.js');
 const rootPath = require('forthright48/world').rootPath;
-
+const rename = require('gulp-rename');
 const browserify = require('browserify');
 const glob = require('glob');
 const source = require('vinyl-source-stream');
+const buffer = require('vinyl-buffer');
+const changed = require('gulp-changed');
+const fs = require('fs');
 
 const vendors = ['jquery', 'moment'];
 
 module.exports = function(gulp) {
-
   gulp.task('build:vendor', function() {
     const b = browserify({
       debug: true
@@ -30,7 +30,6 @@ module.exports = function(gulp) {
   });
 
   function browserified(filePath) {
-    console.log(filePath);
     const fileName = path.basename(filePath);
     return browserify(filePath)
       .external(vendors)
@@ -46,9 +45,27 @@ module.exports = function(gulp) {
     filePathArray.forEach(function(filePath) {
       let destPath = path.relative(path.join(rootPath, 'src'), filePath);
       destPath = path.join('./public', destPath);
-      destPath = path.dirname(destPath);
+      const destDir = path.dirname(destPath);
+
+      // Get Modified Time
+      const mtimeSource = fs.statSync(path.join(rootPath, filePath)).mtime;
+      let mtimeDest;
+      try {
+        mtimeDest = fs.statSync(path.join(rootPath, destPath)).mtime;
+      } catch (e) {
+        mtimeDest = mtimeSource;
+      }
+
+      if (mtimeSource < mtimeDest) return;
+
       browserified(filePath)
-        .pipe(gulp.dest(destPath));
+        .pipe(gulp.dest(destDir))
+        .pipe(rename({
+          suffix: '.min'
+        }))
+        .pipe(buffer())
+        .pipe(uglify())
+        .pipe(gulp.dest(destDir));
     });
     done();
   });
