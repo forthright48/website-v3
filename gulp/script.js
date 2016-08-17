@@ -26,6 +26,8 @@ module.exports = function(gulp) {
 
     return b.bundle()
       .pipe(source('vendor.js'))
+      .pipe(buffer())
+      .pipe(uglify())
       .pipe(gulp.dest('./public/js/vendor/'));
   });
 
