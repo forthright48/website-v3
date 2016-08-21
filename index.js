@@ -15,6 +15,7 @@ app.use('/public/css', express.static(path.join(rootPath, '/node_modules/@forthr
 
 app.get('/', getHome);
 app.get('/intro', getIntro);
+app.get('/findme', getFindMe);
 
 if (require.main === module) {
   server.listen(app.get('port'), function() {
@@ -37,4 +38,8 @@ function getHome(req, res) {
 
 function getIntro(req, res) {
   return res.render('intro');
+}
+
+function getFindMe(req, res) {
+  return res.render('findme');
 }
