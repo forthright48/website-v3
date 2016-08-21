@@ -8,7 +8,7 @@ module.exports = {
     pug: './views/**/*.pug',
     image: './src/**/*.{JPG,jpg,png,gif}',
     css: [
-      './node_modules/@forthright48/simplecss/src/*.css',
+      './node_modules/@forthright48/simplecss/dist/*.css',
       './src/**/*.css'
     ],
     js: './src/**/*.js',
