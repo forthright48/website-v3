@@ -12,7 +12,7 @@ require('./gulp/watch.js')(gulp);
 gulp.task('default',
   gulp.series(
     'clean',
-    'copy',
+    'build:vendor',
     gulp.parallel('style', 'script', 'image'),
     gulp.parallel('watch', 'browser-sync')
   )

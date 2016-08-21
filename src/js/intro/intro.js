@@ -1,9 +1,7 @@
-/**
- * @requires ../vendors/jquery.js
- * @requires ../vendors/moment.js
- */
+const $ = require('jquery');
+const moment = require('moment');
 
-var update = $('.update');
-var date = update.text();
-var replace = moment(date).fromNow();
+const update = $('.update');
+const date = update.text();
+const replace = moment(date).fromNow();
 $('.days').text(replace);
