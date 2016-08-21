@@ -10,6 +10,8 @@
 }
 img {
   max-width: 100%;
+}
+.shadow {
   box-shadow: 0.8rem 0.8rem 1rem #aaa;
 }
 .alert-box {
@@ -25,4 +27,8 @@ img {
   background-color: #e0edf4;
   background-image: url('/public/img/info.png');
   background-size: 3rem 3rem;
+}
+.social-icons img {
+  padding: 1rem;
+  width: 128px;
 }
