@@ -1,0 +1,15 @@
+extends layout
+
+block content
+  .row
+    .any.items
+      p.alert-box.info The following page was last updated on <span class='update'>2016-6-15</span>. That is <span class='days'>many days ago</span>.
+  .row.u-flex.u-flex-center
+    .any.items.u-text-center
+      h4
+        a(href='/public/pdf/MyCV.pdf') View CV
+      p <a href='mailto:forthright48@gmail.com'>Mail me</a> for latest CV.
+
+block scripts
+  script(src='/public/js/vendor/vendor.min.js')
+  script(src='/public/js/intro/intro.min.js')

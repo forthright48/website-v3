@@ -16,6 +16,16 @@ app.use('/public/css', express.static(path.join(rootPath, '/node_modules/@forthr
 app.get('/', getHome);
 app.get('/intro', getIntro);
 app.get('/findme', getFindMe);
+app.get('/cv', getCV);
+
+app.use(function(err, req, res, next) {
+  console.error(err.stack);
+  res.status(500).send('Something broke!');
+});
+
+app.get('*', function(req, res) {
+  return res.status(404).send('Page not found\n');
+});
 
 if (require.main === module) {
   server.listen(app.get('port'), function() {
@@ -42,4 +52,8 @@ function getIntro(req, res) {
 
 function getFindMe(req, res) {
   return res.render('findme');
+}
+
+function getCV(req, res) {
+  return res.render('cv');
 }
