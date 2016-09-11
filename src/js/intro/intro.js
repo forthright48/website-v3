@@ -1,4 +1,3 @@
-const $ = require('jquery');
 const moment = require('moment');
 
 const update = $('.update');

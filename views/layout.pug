@@ -1,15 +1,18 @@
 doctype 5
-html
+html(lang='en')
   head
+    // Meta tags
+    meta(name='viewport', content='width=device-width', initial-scale=1, shrink-to-fit=no)
+
     block head
-      link(rel="stylesheet", href="/public/scss/main.css", media="screen", title="no title", charset="utf-8")
+      link(rel="stylesheet", href="/scss/main.css", media="screen", title="no title", charset="utf-8")
   body
     .container
       include partials/header.pug
 
       block content
-        p Yo
 
       include partials/footer.pug
 
+    script(src='/js/layout/main.js')
     block scripts

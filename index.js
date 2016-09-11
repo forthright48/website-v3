@@ -10,7 +10,7 @@ app.set('port', 8000);
 app.set('view engine', 'pug');
 app.set('views', path.join(rootPath, './views'));
 
-app.use('/public', express.static(path.join(rootPath, '/public')));
+app.use('/', express.static(path.join(rootPath, '/public')));
 app.use('/public/css', express.static(path.join(rootPath, '/node_modules/@forthright48/simplecss/src')));
 
 app.get('/', getHome);
