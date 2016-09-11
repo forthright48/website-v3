@@ -1,5 +1,8 @@
 node_modules/*
 !node_modules/forthright48
 public
+client_module
+css_build
+js_build
 
 secret.js

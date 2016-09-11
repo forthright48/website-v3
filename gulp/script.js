@@ -7,37 +7,58 @@ const glob = require('glob');
 const source = require('vinyl-source-stream');
 const buffer = require('vinyl-buffer');
 const fs = require('fs');
+const config = require('./config.js');
 
-const vendors = ['jquery', 'moment'];
+const vendors = config.vendorInput.js;
 
 module.exports = function(gulp) {
   gulp.task('build:vendor', function() {
     const b = browserify({
-      debug: true
+      debug: true,
+      paths: config.browserifyPath
     });
 
     // require all libs specified in vendors array
     vendors.forEach(function(lib) {
+      let expose = lib;
+      if (lib[0] === '.') {
+        //Relative path
+        expose = path.basename(lib, '.js');
+      }
+
       b.require(lib, {
-        expose: lib
+        expose
       });
     });
 
     return b.bundle()
-      .pipe(source('vendor.min.js'))
+      .pipe(source('vendor.js'))
+      .pipe(gulp.dest(config.vendorOutput.js))
+      .pipe(rename({
+        suffix: '.min'
+      }))
       .pipe(buffer())
       .pipe(uglify())
-      .pipe(gulp.dest('./public/js/vendor/'));
+      .pipe(gulp.dest(config.vendorOutput.js));
   });
 
   function browserified(filePath) {
     const fileName = path.basename(filePath);
-    return browserify(filePath)
+    return browserify({
+        entries: [filePath],
+        paths: config.browserifyPath
+      })
       .external(vendors)
       .transform('babelify', {
         presets: ['es2015']
       })
       .bundle()
+      .on('error', function(err) {
+        // print the error (can replace with gulp-util)
+        console.log(err.message);
+        // end this stream
+        this.emit('end');
+      })
       .pipe(source(fileName));
   }
 

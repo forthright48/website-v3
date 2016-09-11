@@ -1,12 +1,36 @@
 const path = require('path');
 const rootPath = require('forthright48/world').rootPath;
 const config = require('./config.js');
+const changed = require('gulp-changed');
+const debug = require('gulp-debug');
 
 module.exports = function(gulp) {
-  gulp.task('copy:pdf', function() {
-    return gulp.src('./src/**/*.pdf')
-      .pipe(gulp.dest(config.path.dirs.public));
+  function copyRest(folder) {
+    // Copy everything except css, scss and image
+    return gulp.src([`./${folder}/**`, `!./${folder}/**/*.{css,scss,JPG,jpg,png,gif,js}`])
+      .pipe(changed(config.dirs.public))
+      .pipe(gulp.dest(config.dirs.public));
+  }
+
+  gulp.task('copy:src', function() {
+    return copyRest('src');
   });
 
-  gulp.task('copy', gulp.parallel('copy:pdf'));
+  gulp.task('copy:client_module', function() {
+    return copyRest('client_module');
+  });
+
+  gulp.task('copy:css_build', function() {
+    return gulp.src('./css_build/**')
+      .pipe(changed(config.dirs.public))
+      .pipe(gulp.dest(config.dirs.public));
+  });
+
+  gulp.task('client_module', function() {
+    const x = `./node_modules/{${config.vendorInput.all.join(',')}}/**`;
+    return gulp.src(x)
+      .pipe(gulp.dest(config.dirs.client_module));
+  });
+
+  gulp.task('copy', gulp.parallel('copy:src', 'copy:client_module', 'copy:css_build'));
 };
