@@ -24,8 +24,8 @@ module.exports = {
   sassInclude: ['./public'],
   vendorInput: {
     js: [],
-    css: ['bootstrap'],
-    all: ['bootstrap', 'bootstrap']
+    css: [],
+    all: []
   },
   browserifyPath: ['./node_modules', './src/js/']
 };
