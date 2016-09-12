@@ -1,17 +1,17 @@
 extends layout
 
 block content
-  .row.u-flex.u-flex-center
-    .any.items.u-text-center
+  .row.flex-items-xs-middle(style='min-height: 75vh;')
+    .col-xs.text-xs-center
       h3 Find Me On
-      .social-icons
-        a(href='https://www.facebook.com/mohammad.samiul')
-          img(src='/public/img/fb.png', title='facebook')
-        a(href='https://twitter.com/forthright48')
-          img(src='/public/img/twitter.png', title= 'twitter')
-        a(href='https://www.linkedin.com/in/mohammad-samiul-islam-93813661')
-          img(src='/public/img/linkedin.png', title='linkedin')
-        a(href='https://github.com/forthright48')
-          img(src='/public/img/github.png', title='github')
-        a(href="mailto:forthright48@gmail.com")
-          img(src='/public/img/gmail.png', title='gmail')
+
+      a.p-x-1(href='https://www.facebook.com/mohammad.samiul')
+        img(src='/img/fb.png', title='facebook', style='width: 100px;')
+      a.p-x-1(href='https://twitter.com/forthright48')
+        img(src='/img/twitter.png', title= 'twitter', style='width: 100px;')
+      a.p-x-1(href='https://www.linkedin.com/in/mohammad-samiul-islam-93813661')
+        img(src='/img/linkedin.png', title='linkedin', style='width: 100px;')
+      a.p-x-1(href='https://github.com/forthright48')
+        img(src='/img/github.png', title='github', style='width: 100px;')
+      a.p-x-1(href="mailto:forthright48@gmail.com")
+        img(src='/img/gmail.png', title='gmail', style='width: 100px;')

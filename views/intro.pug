@@ -1,24 +1,24 @@
 extends layout
 
 block content
+  .row.text-xs-center
+    .col-sm
+      p.alert.alert-info The following page was last updated on <span class='update'>2016-8-15</span>. That is <span class='days'>many days ago</span>.
   .row
-    .any.items
-      p.alert-box.info The following page was last updated on <span class='update'>2016-8-15</span>. That is <span class='days'>many days ago</span>.
-  .row.u-flex
-    .three.items
-      img.shadow(src="/public/img/me.jpg")
-    .nine.items
+    .col-sm-3
+      img.img-fluid(src="/img/me.jpg")
+    .col-sm-9
       h4 Hello World
-      p My name is Mohammad Samiul Islam. Currently I am a student at North South University, studying Computer Science. I am also a part time Software Enginner at <a href='http://muktosoft.com/'>Mukto Software LTD</a> and Competitive Programming Trainer at MIST.
+      p My name is Mohammad Samiul Islam. Currently I am a student at North South University, studying Computer Science. I am also a part time Software Enginner at <a href='http:/muktosoft.com/'>Mukto Software LTD</a> and Competitive Programming Trainer at MIST.
 
-  .row.u-flex.u-margin-top
-    .nine.items
+  .row.m-t-1
+    .col-sm-9
       h4 Manga Lover
-      p The next thing you must know about me, is how much I love reading <a href="https://en.wikipedia.org/wiki/Manga">Manga</a>. It's as bad as addiction.
+      p The next thing you must know about me, is how much I love reading <a href="https:/en.wikipedia.org/wiki/Manga">Manga</a>. It's as bad as addiction.
 
       p Originally, I simply loved watching cartoons. Back then, in cartoon network, they used to show some Anime shows ( I didn't know they were anime though ) like Dragon Ball Z and Cardcaptor Sakura. Later, a new TV channel popped up known as Animax. It was full of Anime shows. But both Cartoon Network and Animax aired same seasons whole year long. For example, they never showed the second season of Slam Dunk. What a bummer.
 
-      p Later, one of my friend introduced me to a website where one can read Manga translated in english for free. The first manga I read was <a href="https://en.wikipedia.org/wiki/Slam_Dunk_(manga)">Slam Dunk</a>, and when I realized the episodes I watched on Animax were only half the story, I just had to read it till the end. And then I was hooked.
+      p Later, one of my friend introduced me to a website where one can read Manga translated in english for free. The first manga I read was <a href="https:/en.wikipedia.org/wiki/Slam_Dunk_(manga)">Slam Dunk</a>, and when I realized the episodes I watched on Animax were only half the story, I just had to read it till the end. And then I was hooked.
 
       p Since class 2007 (or is it 2006?), I have been reading Manga. It was such a struggle to read so many chapters with 8kbps internet speed. My slow net is the primary reason why I got hooked with Manga instead of Anime. I simply didn't have enough speed to stream Anime.
 
@@ -26,16 +26,16 @@ block content
 
       p I can talk about Manga all day, but you probably don't want to listen about it. Or do you?
 
-    .three.items
-      img.shadow(src="/public/img/one-piece.jpg")
-      img.u-margin-top.shadow(src="/public/img/slam-dunk.jpg")
+    .col-sm-3
+      img.img-fluid(src="/img/one-piece.jpg")
+      img.img-fluid.m-t-1(src="/img/slam-dunk.jpg")
 
-  .row.u-flex.u-margin-top
-    .three.items
-      img.shadow(src="/public/img/wf.jpg")
-    .nine.items
+  .row
+    .col-sm-3
+      img.img-fluid(src="/img/wf.jpg")
+    .col-sm-9
       h4 Competitive Programming
-      p I enrolled at university on September 2011. In order to improve my programming skills, I decided to start <a href="https://en.wikipedia.org/wiki/Competitive_programming">competitive programming</a> and then for the next 4 years, that's all I did during my university life.
+      p I enrolled at university on September 2011. In order to improve my programming skills, I decided to start <a href="https:/en.wikipedia.org/wiki/Competitive_programming">competitive programming</a> and then for the next 4 years, that's all I did during my university life.
 
       p Competitive Programming became my second passion (first passion was reading Manga). I spent hours learning algorithms and solving problems on UVa. I changed 3 universities (AIUB->DIU->NSU) just to get better environment for practicing problem solving. Dropped out of semester to get more time for practicing, which increased my graduation time by 3 years (it's taking me 7 years to complete my undergraduate).
 
@@ -43,17 +43,17 @@ block content
 
       p The overall journey was bumpy. The end result was a mix of success and failures. Competitive Programming is no longer my passion (reading Manga is still my passion), but what I have learned while chasing it taught me life lessons that can be applied everywhere. It was a great journey and I have no regret about it.
 
-  .row.u-flex.u-margin-top
-    .nine.items
+  .row
+    .col-sm-9
       h4 What's Next?
       p Spent my child hood watching cartoon and university doing competitive programming. So what's next? I am not sure, except for that I will continue reading Manga.
 
       p I enjoy learning new things, so I am currently exploring other fields to see what sticks. One of the things that I seem to enjoy currently is Web development using NodeJS. Perhaps, Javascript is going to be the next big thing for me? Or it could be Operating Systems. Only time will tell, and when I understand what it is, I will update this page.
 
-    .three.items
-      img.shadow(src="/public/img/next.jpg")
+    .col-sm-3
+      img.img-fluid(src="/img/next.jpg")
 
 
 block scripts
-  script(src='/public/js/vendor/vendor.min.js')
-  script(src='/public/js/intro/intro.min.js')
+  script(src='/js/vendor/vendor.min.js')
+  script(src='/js/intro/intro.min.js')

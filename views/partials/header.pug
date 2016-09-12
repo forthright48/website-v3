@@ -2,20 +2,22 @@
   .col-xs
     h1 forthright48
 nav.navbar
-  ul.nav.navbar-nav
-    li.nav-item
-      a.nav-link(href='/') Home
-    li.nav-item.dropdown
-      a.nav-link.dropdown-toggle(data-toggle="dropdown",href='#') Projects
-      .dropdown-menu
-        a.dropdown-item(href="#") CPPS
-        a.dropdown-item(href="#") Gateway
-        a.dropdown-item(href="#") View All
-    li.nav-item
-      a.nav-link(href="http://blog.forthright48.com") Blog
-    li.nav-item.dropdown
-      a.nav-link.dropdown-toggle(data-toggle='dropdown',href='#') About Me
-      .dropdown-menu
-        a.dropdown-item(href="/intro") Intro
-        a.dropdown-item(href="/findme") Find Me On
-        a.dropdown-item(href="/cv") CV
+  button.navbar-toggler.hidden-sm-up(type='button', data-toggle="collapse", data-target="#navbar") &#9776;
+  #navbar.collapse.navbar-toggleable-xs
+    ul.nav.navbar-nav
+      li.nav-item
+        a.nav-link(href='/') Home
+      li.nav-item.dropdown
+        a.nav-link.dropdown-toggle(data-toggle="dropdown",href='#') Projects
+        .dropdown-menu
+          a.dropdown-item(href="#") CPPS
+          a.dropdown-item(href="#") Gateway
+          a.dropdown-item(href="#") View All
+      li.nav-item
+        a.nav-link(href="http://blog.forthright48.com") Blog
+      li.nav-item.dropdown
+        a.nav-link.dropdown-toggle(data-toggle='dropdown',href='#') About Me
+        .dropdown-menu
+          a.dropdown-item(href="/intro") Intro
+          a.dropdown-item(href="/findme") Find Me On
+          a.dropdown-item(href="/cv") CV
