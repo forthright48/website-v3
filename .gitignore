@@ -4,5 +4,6 @@ public
 client_module
 css_build
 js_build
+npm-debug.log
 
 secret.js
