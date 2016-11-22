@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts":
   {
-    "start": "gulp production && node index.js",
+    "start": "gulp production && forever index.js",
     "test": "./node_modules/mocha/bin/mocha --recursive --reporter spec ./tests"
   },
   "repository":
