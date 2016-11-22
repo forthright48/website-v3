@@ -1,29 +1,8 @@
-/*
-.u-margin-top {
-  margin-top: 1.5rem;
+.site {
+  display: flex;
+  /*min-height: 100vh;*/
+  /*flex-direction: column;*/
 }
-img {
-  max-width: 100%;
+.site-content {
+  flex: 1;
 }
-.shadow {
-  box-shadow: 0.8rem 0.8rem 1rem #aaa;
-}
-.alert-box {
-  text-align: center;
-  border: 0.1rem solid #00529B;
-  margin: 1rem 0rem;
-  padding: 1rem 1rem 1rem 4rem;
-  background-repeat: no-repeat;
-  background-position: 1rem center;
-}
-.info {
-  color: #00529B;
-  background-color: #e0edf4;
-  background-image: url('/public/img/info.png');
-  background-size: 3rem 3rem;
-}
-.social-icons img {
-  padding: 1rem;
-  width: 128px;
-}
-*/
